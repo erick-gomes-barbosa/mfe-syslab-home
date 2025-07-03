@@ -2,6 +2,8 @@ import ButtonAddLab from "./components/buttons/button-add-lab";
 import CardLabs from "./components/card/card-labs";
 import SearchbarMain from "./components/searchbar/search-bar-main";
 import { MockLabs } from "./mockData/labs-mock";
+import { LaboratorySchema } from "./schemas/laboratory-schema";
+import { LaboratoryType } from "./types/laboratory-type";
 interface Labs {
   id: number;
   name: string;
@@ -10,6 +12,12 @@ interface Labs {
 }
 
 export default function Root(props) {
+  const laboratory: LaboratoryType = {
+    name: "Erick",
+    enviroment: "Aeric",
+  };
+  // console.log(LaboratorySchema.parse(laboratory));
+
   return (
     <>
       <SearchbarMain />
