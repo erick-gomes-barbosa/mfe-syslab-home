@@ -1,20 +1,29 @@
 import iconClock from "../../assets/image/icon-clock.svg";
+import { CardSchema } from "../../schemas/card-labs-schema";
+import { CardType } from "../../types/card-labs-type";
 
-interface Labs {
-  id: number;
-  name: string;
-  horario_inicio: string;
-  horario_fim: string;
-}
 export default function CardLabs({
-  id,
+  enviroment,
   name,
-  horario_fim,
-  horario_inicio,
-}: Labs) {
+  closing_time,
+  opening_time,
+}: CardType) {
+  const props: CardType = {
+    closing_time,
+    enviroment,
+    name,
+    opening_time,
+  };
+
+  //Caso os dados estiverem errados o componente não será retornado.
+  const propsValidation = CardSchema.safeParse(props);
+  if (!propsValidation.success) {
+    return null;
+  }
+
   return (
     <div
-      key={id}
+      key={enviroment}
       className="flex items-center justify-between bg-blueLight w-10/12 min-w-[330px] rounded-3xl px-7 min-h-28 shadow-md shadow-[#00000040]"
     >
       <div>
@@ -23,7 +32,7 @@ export default function CardLabs({
         <div className="flex items-center mt-2">
           <img src={iconClock} alt="icon-clock" className="w-5 h-5 mr-2" />
           <p className="">
-            {horario_inicio} - {horario_fim}
+            {opening_time} - {closing_time}
           </p>
         </div>
       </div>
