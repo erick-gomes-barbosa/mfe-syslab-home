@@ -1,5 +1,6 @@
 import IconAdd from "../../assets/image/icon-add.svg";
 
+// Componente de botão para adicionar novo laboratório
 export default function ButtonAddLab() {
   return (
     <button className="flex bg-white items-center text-blueMedium font-bold border-2 border-blueMedium px-7 py-1 rounded-3xl">

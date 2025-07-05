@@ -1,26 +1,13 @@
 import iconClock from "../../assets/image/icon-clock.svg";
-import { CardSchema } from "../../schemas/card-labs-schema";
-import { CardType } from "../../types/card-labs-type";
+import { CardLabsType } from "../../types/card-labs-type";
 
+// Componente de card para listagem de laboratórios na página home
 export default function CardLabs({
   enviroment,
   name,
   closing_time,
   opening_time,
-}: CardType) {
-  const props: CardType = {
-    closing_time,
-    enviroment,
-    name,
-    opening_time,
-  };
-
-  //Caso os dados estiverem errados o componente não será retornado.
-  const propsValidation = CardSchema.safeParse(props);
-  if (!propsValidation.success) {
-    return null;
-  }
-
+}: CardLabsType) {
   return (
     <div
       key={enviroment}

@@ -2,15 +2,16 @@ import ButtonAddLab from "./components/buttons/button-add-lab";
 import CardLabs from "./components/card/card-labs";
 import SearchbarMain from "./components/searchbar/search-bar-main";
 import { MockLabs } from "./mockData/labs-mock";
-import { CardType } from "./types/card-labs-type";
+import { CardLabsType } from "./types/card-labs-type";
 
-export default function Root(props) {
+// Componente raiz da aplicação, responsável por renderizar a lista de laboratórios e o botão de adicionar laboratório
+export default function Root() {
   return (
     <>
       <SearchbarMain />
       <div className=" flex flex-col w-full items-center">
         <div className="grid justify-items-center min-[1200px]:grid-cols-3 min-[768px]:grid-cols-2  max-md:w-full gap-16  max-w-7xl max-md:overflow-y-auto my-7 py-3">
-          {MockLabs.map((lab: CardType) => {
+          {MockLabs.map((lab: CardLabsType) => {
             return (
               <CardLabs
                 key={lab.enviroment}
@@ -23,6 +24,7 @@ export default function Root(props) {
           })}
         </div>
         <div className="sticky flex bottom-8 justify-end px-14 min-[1200px]:w-[1120px] min-[768px]:w-[720px] max-md:w-full max-w-7xl min-[768px]:mt-10">
+          {/*Obs: Este botão deve ser listado apenas para usuários com permissão de administrador - Lógica ainda não desenvolvida */}
           <ButtonAddLab />
         </div>
       </div>

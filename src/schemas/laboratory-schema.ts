@@ -1,5 +1,6 @@
 import { z } from "zod";
 
+// Schema para validação dos dados do laboratório
 export const LaboratorySchema = z.object({
   //Nome do laboratório.
   name: z
@@ -23,10 +24,10 @@ export const LaboratorySchema = z.object({
   //Campo para confirmar a existência de televisão no laboratório.
   television: z.boolean(),
 
-  //Campo para confirmar a existência de ventilador no laboratório.
+  //Campo para validar a existência de ventilador no laboratório.
   fan: z.boolean(),
 
-  //Campo para confirmar a existência de ar condicionado no laboratório.
+  //Campo para validar a existência de ar condicionado no laboratório.
   air_conditioner: z.boolean(),
 
   //Horário de abertura do laboratório.
