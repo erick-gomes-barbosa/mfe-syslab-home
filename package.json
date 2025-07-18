@@ -64,6 +64,7 @@
     "graphql": "^16.11.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-hook-form": "^7.60.0",
     "single-spa": "^5.9.3",
     "single-spa-react": "^4.3.1",
     "style-loader": "^4.0.0",
