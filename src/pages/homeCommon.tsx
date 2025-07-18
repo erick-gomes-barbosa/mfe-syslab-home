@@ -15,14 +15,19 @@ export default function HomeCommon() {
       </div>
       <div className=" flex flex-col w-full items-center">
         <div className="grid justify-items-center min-[1200px]:grid-cols-3 min-[768px]:grid-cols-2  max-md:w-full gap-16  max-w-7xl max-md:overflow-y-auto my-7 py-3">
-          {MockLabs.map((lab: CardLabsType) => {
+          {MockLabs.map((lab) => {
             return (
               <CardLabs
-                key={lab.enviroment}
-                enviroment={lab.enviroment}
-                name={lab.name}
+                key={lab.enviroment_id}
+                enviroment_id={lab.enviroment_id}
+                lab_name={lab.lab_name}
                 opening_time={lab.opening_time}
                 closing_time={lab.closing_time}
+                air_conditioner={lab.air_conditioner}
+                fan={lab.fan}
+                qty_chairs={lab.qty_chairs}
+                qty_computers={lab.qty_computers}
+                television={lab.television}
               />
             );
           })}
